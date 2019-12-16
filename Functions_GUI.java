@@ -2,92 +2,86 @@
 package Ex1;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
 public class Functions_GUI implements functions  {
+	
+	
+	private ArrayList<function> f_list = new ArrayList();
+
+
 
 	@Override
 	public boolean add(function arg0) {
-		// TODO Auto-generated method stub
-		return false;
+		return f_list.add(arg0);
 	}
 
 	@Override
 	public boolean addAll(Collection<? extends function> arg0) {
-		// TODO Auto-generated method stub
-		return false;
+		return f_list.addAll(arg0);
 	}
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
+		f_list.clear();
 		
 	}
 
 	@Override
 	public boolean contains(Object arg0) {
-		// TODO Auto-generated method stub
-		return false;
+		return f_list.contains(arg0);
 	}
 
 	@Override
 	public boolean containsAll(Collection<?> arg0) {
-		// TODO Auto-generated method stub
-		return false;
+		return f_list.containsAll(arg0);
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return f_list.isEmpty();
 	}
 
 	@Override
 	public Iterator<function> iterator() {
-		// TODO Auto-generated method stub
-		return null;
+		return f_list.iterator();
 	}
 
 	@Override
 	public boolean remove(Object arg0) {
-		// TODO Auto-generated method stub
-		return false;
+		return f_list.remove(arg0);
 	}
 
 	@Override
 	public boolean removeAll(Collection<?> arg0) {
-		// TODO Auto-generated method stub
-		return false;
+		return removeAll(arg0);
 	}
 
 	@Override
 	public boolean retainAll(Collection<?> arg0) {
-		// TODO Auto-generated method stub
-		return false;
+		return f_list.retainAll(arg0);
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return f_list.size();
 	}
 
 	@Override
 	public Object[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
+		return f_list.toArray();
 	}
 
 	@Override
 	public <T> T[] toArray(T[] arg0) {
-		// TODO Auto-generated method stub
-		return null;
+		return f_list.toArray(arg0);
 	}
 
 	@Override
 	public void initFromFile(String file) throws IOException {
-		// TODO Auto-generated method stub
+		String s = FileUtils.readFile(file);
 		
 	}
 
@@ -108,5 +102,7 @@ public class Functions_GUI implements functions  {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 
 }

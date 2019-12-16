@@ -153,7 +153,6 @@ public class Monom implements function{
 	@Override
 	public function initFromString(String s) {
 		function f = new Monom(s);
-		
 		return f;
 	}
 	@Override

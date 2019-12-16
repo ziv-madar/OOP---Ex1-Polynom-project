@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class MonomTest2 {
 
 	@Test
-	void test() {
+	void testMonomString() {
 		Monom str = new Monom("5x^7");
 		Monom m = new Monom(5,7);
 		
@@ -51,7 +51,7 @@ class MonomTest2 {
 
 		if(m1.get_coefficient()!=coef1*coef2||m1.get_power()!=power1+power2)
 
-			fail("ERROR FREND :both Monom have to be equals");
+			fail("ERROR :both Monom have to be equals");
 
 	}
 	
@@ -68,8 +68,46 @@ class MonomTest2 {
 
 			if(!m.toString().equals("0"))
 
-				fail("EROR");
+				fail("ERROR");
 		}
 	}
+	
+	@Test
+
+	void testderivative() {
+
+		double coef = Math.random()*100;
+
+		int pow = (int)(Math.random()*100);
+
+		Monom m = new Monom(coef ,pow);
+
+		m =m.derivative();
+
+		if(m.get_coefficient() != pow*coef || m.get_power() != pow-1);
+
+			fail("ERROR : coefficient and power are not equal !!!!");
+
+	}
+	
+	void testf() {
+
+		double coef = Math.random()*100;
+
+		int power = (int)(Math.random()*100);
+
+		Monom m = new Monom(coef , power);
+
+		double x = Math.random()*100;
+
+		if(coef*Math.pow(x, power) != m.f(x))
+
+			fail("EROR:wrong answer");
+
+	}
+
+	
+	
+
 
 }
